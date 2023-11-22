@@ -94,12 +94,4 @@ class _CronometroPageState extends State<CronometroPage> {
       ),
     );
   }
-
-  @override
-  void dispose() {
-    if (_timer != null) {
-      _timer!.cancel();
-    }
-    super.dispose();
-  }
 }
