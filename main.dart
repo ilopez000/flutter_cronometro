@@ -35,14 +35,20 @@ class _CronometroPageState extends State<CronometroPage> {
         _time++;
         if (_time >= 10) {
           // Muestra el snackbar cuando el tiempo llega a 10 segundos.
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text('Time out'),
-            ),
-          );
+          _showTimeOut();
+          _stopTimer();
+          _resetTimer();
         }
       });
     });
+  }
+
+  void _showTimeOut(){
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('Time out'),
+      ),
+    );
   }
 
   void _stopTimer() {
